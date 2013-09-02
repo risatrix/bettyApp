@@ -1,17 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  first_name: MyString
-  last_name: MyString
-  email: MyString
-  phone: MyString
-  formula: MyString
+  first_name: Elvis
+  last_name: Presley
+  email: theKing@gmail.com
+  phone: 999-999-9999
+  formula: Greaser Brown
   user_id: 1
 
 two:
-  first_name: MyString
-  last_name: MyString
-  email: MyString
-  phone: MyString
-  formula: MyString
+  first_name: Joan
+  last_name: Jett
+  email: jjett@epic.com
+  phone: 521-235-2345
+  formula: Jett Black!
   user_id: 1
