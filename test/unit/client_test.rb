@@ -5,4 +5,9 @@ class ClientTest < ActiveSupport::TestCase
     c = clients(:one)
     assert c.valid?, "field is missing"
   end
+  test "email is email" do
+    c = clients(:two)
+    assert c.valid?, "email format incorrect"
+  end
+  #TODO: validate phone number?
 end
