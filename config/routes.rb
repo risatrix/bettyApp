@@ -1,4 +1,6 @@
 BettyApp::Application.routes.draw do
+  root :to => redirect('/clients')
+  
   resources :clients
 
 
