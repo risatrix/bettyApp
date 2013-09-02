@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class ClientTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "valid with all attributes" do
+    c = clients(:one)
+    assert c.valid?, "field is missing"
+  end
 end
