@@ -1,4 +1,8 @@
 BettyApp::Application.routes.draw do
+  devise_for :views
+
+  devise_for :users
+
   root :to => redirect('/clients')
   
   resources :clients
