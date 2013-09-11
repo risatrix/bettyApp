@@ -78,11 +78,11 @@ class ClientsController < ApplicationController
   # DELETE /clients/1
   # DELETE /clients/1.json
   def destroy
-    @client = @user.client.find(params[:id])
+    @client = @user.clients.find(params[:id])
     @client.destroy
 
     respond_to do |format|
-      format.html { redirect_to user_clients_url }
+      format.html { redirect_to user_clients_url, notice: 'Client removed from list.' }
       format.json { head :no_content }
     end
   end
