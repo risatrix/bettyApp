@@ -1,8 +1,14 @@
 class ClientsController < ApplicationController
+
+  before_filter :get_user
+
+  def get_user
+    @user = User.find(params[:user_id])
+  end
   # GET /clients
   # GET /clients.json
   def index
-    @clients = Client.all
+    @clients = @user.clients.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +19,7 @@ class ClientsController < ApplicationController
   # GET /clients/1
   # GET /clients/1.json
   def show
-    @client = Client.find(params[:id])
+    @client = @user.Client.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,7 +30,7 @@ class ClientsController < ApplicationController
   # GET /clients/new
   # GET /clients/new.json
   def new
-    @client = Client.new
+    @client = @user.Client.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,13 +40,13 @@ class ClientsController < ApplicationController
 
   # GET /clients/1/edit
   def edit
-    @client = Client.find(params[:id])
+    @client = @user.Client.find(params[:id])
   end
 
   # POST /clients
   # POST /clients.json
   def create
-    @client = Client.new(params[:client])
+    @client = @uesr.Client.new(params[:client])
 
     respond_to do |format|
       if @client.save
@@ -56,7 +62,7 @@ class ClientsController < ApplicationController
   # PUT /clients/1
   # PUT /clients/1.json
   def update
-    @client = Client.find(params[:id])
+    @client = @user.Client.find(params[:id])
 
     respond_to do |format|
       if @client.update_attributes(params[:client])
