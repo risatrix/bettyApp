@@ -4,11 +4,10 @@ BettyApp::Application.routes.draw do
   devise_for :users
 
   root :to => redirect('/clients')
-  
-  resources :clients
 
-  resources :users
-
+  resources :users do
+      resources :clients
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
