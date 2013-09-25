@@ -1,9 +1,9 @@
 class ClientsController < ApplicationController
+  before_filter :authenticate_user!
+  before_filter :get_current_user
 
-  before_filter :get_user
-
-  def get_user
-    @user = User.find(params[:user_id])
+  def get_current_user
+    @user = current_user
   end
   # GET /clients
   # GET /clients.json
