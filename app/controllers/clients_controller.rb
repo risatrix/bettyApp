@@ -46,11 +46,10 @@ class ClientsController < ApplicationController
   # POST /clients
   # POST /clients.json
   def create
-    @client = @uesr.clients.new(params[:client])
-
+    @client = @user.clients.new(params[:client])
     respond_to do |format|
       if @client.save
-        format.html { redirect_to @client, notice: 'Client was successfully created.' }
+        format.html { redirect_to user_clients_url, notice: 'Client was successfully created.' }
         format.json { render json: @client, status: :created, location: @client }
       else
         format.html { render action: "new" }
