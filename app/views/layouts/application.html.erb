@@ -13,7 +13,8 @@
 
 <%= yield %>
 
-<%= link_to 'Edit Profile', edit_user_path(@user) %>
-
+<% if current_user %>
+	<%= link_to 'Edit Profile', edit_user_path(@user) %>
+<% end %>
 </body>
 </html>

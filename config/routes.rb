@@ -11,6 +11,7 @@ BettyApp::Application.routes.draw do
     root :to =>  'clients#index'
   end
 
+  # root to: "devise/sessions#new"
   devise_scope :user do
     root to: "devise/sessions#new"
   end
