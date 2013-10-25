@@ -16,7 +16,9 @@
 <!--these will be footer links-->
 <% if current_user %>
 	<%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
-	<%= link_to 'Edit Profile', edit_user_path(@user) %>
+	<% if can? :update, @user %>
+		<%= link_to 'Edit Profile', edit_user_path(@user) %>
+	<% end %>		
 <% end %>
 </body>
 </html>
