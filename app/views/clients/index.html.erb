@@ -1,3 +1,9 @@
+<%= link_to 'Add New Client', new_user_client_path(@user), 'data-role'=>'button', 'data-inline'=> 'true', 'data-mini'=> 'true','data-corners'=> 'false', 'style'=>'float: left'  %>
+
+<% if current_user %>
+ <%= link_to 'My Profile', edit_user_path(current_user), 'data-role'=>'button', 'data-inline'=>"true", 'data-corners'=> 'false', 'data-mini'=>'true', 'style'=>"float: right;" %>
+<% end %>
+
 <ul data-role="listview" data-filter="true" data-filter-placeholder="Filter client list by name" data-corners='false'>
 <% @clients.each do |client| %>
     <li data-role="collapsible" data-corners='false' data-shadow='false' data-iconshadow'true' data-iconpos='right' data-theme='c' class="ul-li-has-thumb client_li">
@@ -19,5 +25,3 @@
 </ul>  
 
 <br />
-
-<%= link_to 'Add Client', new_user_client_path(@user) %>

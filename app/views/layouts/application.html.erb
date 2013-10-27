@@ -30,12 +30,8 @@
 
 		<div data-role="footer" data-position="fixed">
 			<h5>&copy;2013 Urban Betty</h5>
-			<% if current_user %>
-				<%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
-				<%= link_to 'Edit Profile', edit_user_path(@user) %>	
-			<% end %>
 		</div>	
-	</div>	
+	</div><!--end page-->
 <!--these will be footer links-->
 </body>
 </html>
