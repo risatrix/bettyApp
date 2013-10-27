@@ -1,30 +1,22 @@
-<h1>Listing clients</h1>
-
-<table>
-  <tr>
-    <th>First name</th>
-    <th>Last name</th>
-    <th>Email</th>
-    <th>Phone</th>
-    <th>Formula</th>
-    <th>User</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<ul data-role="listview" data-filter="true" data-filter-placeholder="Filter client list by name" data-corners='false'>
 <% @clients.each do |client| %>
-  <tr>
-    <td><%= client.first_name %></td>
-    <td><%= client.last_name %></td>
-    <td><%= client.email %></td>
-    <td><%= client.phone %></td>
-    <td><%= client.formula %></td>
-    <td><%= link_to 'Edit', edit_user_client_path(@user, client) %></td>
-    <td><%= link_to 'Delete', [@user, client], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+    <li data-role="collapsible" data-corners='false' data-shadow='false' data-iconshadow'true' data-iconpos='right' data-theme='c' class="ul-li-has-thumb client_li">
+        <h3>
+        <span class="indent"><%= client.first_name %> <%= client.last_name %></span></h3>
+        <ul class="hidden sub" data-role="list-view">
+          <li><a href="email: <%= client.email %> "><%= client.email %></a></li>
+          <li>
+            <a href="tel: <%= client.phone %> "><%= client.phone %></a>
+            <a href="sms: <%= client.phone %> "><span>(send text)</span></a>
+          </li>
+          <li><span>Formula:</span><br/>
+            <%= client.formula %></li>
+          <%= link_to 'Edit', edit_user_client_path(@user, client), 'data-role'=>'button', 'data-inline'=>"true", 'data-corners'=> 'false' %>
+           <%= link_to 'Delete', [@user, client], method: :delete, data: { confirm: 'Are you sure?' }, 'data-role'=>'button', 'data-inline'=>"true", 'data-corners'=> 'false'  %>
+        </ul>   
+    </li>
 <% end %>
-</table>
+</ul>  
 
 <br />
 

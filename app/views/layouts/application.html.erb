@@ -2,23 +2,37 @@
 <html>
 <head>
   <title>BettyApp</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name ="apple-mobile-web-app-capable" content="yes" />
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+  <script type="text/javascript" src="//use.typekit.net/bdk5jqh.js"></script>
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<div data-role="page">
+		<div data-role="header" data-position="fixed">
+			
+			<h1>
+				<span class="icon-flickr"></span>
+				the Betty
+				<span class="icon-flickr"></span>
+			</h1>
+		</div>	
+		<p class="notice"><%= notice %></p>
+		<p class="alert"><%= alert %></p>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+		<%= yield %>
 
-<%= yield %>
-
+		<div data-role="footer" data-position="fixed">
+			<h5>&copy;2013 Urban Betty</h5>
+			<% if current_user %>
+				<%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+				<%= link_to 'Edit Profile', edit_user_path(@user) %>	
+			<% end %>
+		</div>	
+	</div>	
 <!--these will be footer links-->
-<% if current_user %>
-	<%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
-	<% if can? :update, @user %>
-		<%= link_to 'Edit Profile', edit_user_path(@user) %>
-	<% end %>		
-<% end %>
 </body>
 </html>
