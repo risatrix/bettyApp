@@ -5,10 +5,12 @@
   border-radius: 0
   text-shadow: none
   font-family: "brandon-grotesque", Arial, sans-serif
-
+ 
 //custom jquery theme  
 .ui-body-c
   background: #feffef
+  .wrapper
+    padding: 0 1em
 .ui-bar
   border: 1px solid #e5b8b8  
 .ui-header
@@ -23,8 +25,15 @@
     display: inline-block
     -webkit-margin-before: 0
     -webkit-margin-after: 0
-    margin: 0
-//butons etc
+    margin: 10px 0
+.ui-footer
+  .ui-title
+    font-family: 'tamarillo', sans-serif
+    color: #faddce
+    font-weight: bold
+    text-shadow: 0  1px 0 #eeeeee
+
+//basic butons etc
 .ui-btn
   border: 1px solid #e5b8b8
   @include background(linear-gradient(top, #faddce 0%, #e5b8b8 100%))
@@ -32,7 +41,8 @@
     font-size: 22px
 .ui-btn-hover-c
   @include background(linear-gradient(top, #e5b8b8 0%, #faddce 100%))
-//filter list and other inputs   
+
+//filter list and other form inputs   
 .ui-listview-filter   
   padding: .5em 0
   margin: 0
@@ -61,11 +71,10 @@ textarea.ui-input-text
     @include box-shadow(0 0 12px #91c0bf)
 .ui-shadow-inset
   @include box-shadow(inset 0 1px 4px #dfd3c8) 
-.wrapper
-  padding: 0 1em
+
+//accordion list 
 .ui-li-static.ui-li
   padding: 0
-
 .ui-collapsible-inset .ui-collapsible-heading 
   .ui-btn 
     background: transparent 
@@ -76,6 +85,6 @@ textarea.ui-input-text
     h3
       padding: 15px 0
   h3
-    padding-top: 15px    
+    padding-top: 15px
 .ui-listview  
   border: 1px solid #eae5cc
