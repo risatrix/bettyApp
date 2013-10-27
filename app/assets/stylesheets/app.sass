@@ -34,7 +34,7 @@
   @include background(linear-gradient(top, #e5b8b8 0%, #faddce 100%))
 //filter list and other inputs   
 .ui-listview-filter   
-  padding: .5em 1em
+  padding: .5em 0
   margin: 0
   background: none
   clear: both
@@ -63,3 +63,19 @@ textarea.ui-input-text
   @include box-shadow(inset 0 1px 4px #dfd3c8) 
 .wrapper
   padding: 0 1em
+.ui-li-static.ui-li
+  padding: 0
+
+.ui-collapsible-inset .ui-collapsible-heading 
+  .ui-btn 
+    background: transparent 
+    border: 0
+.client_li
+  @include background(linear-gradient(top, #feffef 0%, #eae5cc 100%))
+  &.ui-collapsible-collapsed
+    h3
+      padding: 15px 0
+  h3
+    padding-top: 15px    
+.ui-listview  
+  border: 1px solid #eae5cc
