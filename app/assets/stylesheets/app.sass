@@ -28,8 +28,8 @@
 .ui-btn
   border: 1px solid #e5b8b8
   @include background(linear-gradient(top, #faddce 0%, #e5b8b8 100%))
-.ui-mini .ui-btn-inner
-  font-size: 1.25em
+  .ui-btn-inner
+    font-size: 22px
 .ui-btn-hover-c
   @include background(linear-gradient(top, #e5b8b8 0%, #faddce 100%))
 //filter list and other inputs   
@@ -53,6 +53,8 @@ textarea.ui-input-text
   @include box-shadow(0 0 12px #91c0bf)
 .ui-input-search,
 .ui-input-text
+  input
+    font-size: 22px
   .ui-mini
     margin: .25em 1em
   &.ui-focus

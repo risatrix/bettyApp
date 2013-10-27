@@ -12,26 +12,26 @@
   <% end %>
   <%= hidden_field_tag(:user_id, @user.id) %>
   <div class="field">
-    <%= f.label :first_name %><br />
+    <%= f.label :first_name %>
     <%= f.text_field :first_name %>
   </div>
   <div class="field">
-    <%= f.label :last_name %><br />
+    <%= f.label :last_name %>
     <%= f.text_field :last_name %>
   </div>
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email %>
     <%= f.email_field :email %>
   </div>
   <div class="field">
-    <%= f.label :phone %><br />
+    <%= f.label :phone %>
     <%= f.telephone_field :phone %>
   </div>
   <div class="field">
-    <%= f.label :formula %><br />
+    <%= f.label :formula %>
     <%= f.text_field :formula %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'data-corners'=>'false' %>
   </div>
 <% end %>
