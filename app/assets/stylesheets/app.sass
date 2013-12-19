@@ -1,5 +1,6 @@
 @import "compass/css3/images"
 @import "compass/css3/box-shadow"
+@import "compass/css3/border-radius"
 
 $texthilite: #a36464
 
@@ -48,6 +49,7 @@ $texthilite: #a36464
 .ui-btn
   border: 1px solid #e5b8b8
   @include background(linear-gradient(top, #faddce 0%, #e5b8b8 100%))
+  @include border-radius(0)
   .ui-btn-inner
     font-size: 22px
   @media screen and (max-width: 520px)
