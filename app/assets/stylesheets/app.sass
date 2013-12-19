@@ -50,6 +50,10 @@ $texthilite: #a36464
   @include background(linear-gradient(top, #faddce 0%, #e5b8b8 100%))
   .ui-btn-inner
     font-size: 22px
+  @media screen and (max-width: 520px)
+    width: 100%
+    margin-bottom: .5em
+    float: none !important  
 .ui-btn-hover-c
   @include background(linear-gradient(top, #e5b8b8 0%, #faddce 100%))
 
